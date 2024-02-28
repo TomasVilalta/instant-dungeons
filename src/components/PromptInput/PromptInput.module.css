@@ -1,0 +1,29 @@
+.searchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 70px;
+  width: 100%;
+}
+
+.searchInput {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px 0 0 8px;
+  font-size: 1rem;
+  width: 100%;
+  min-width: 350px;
+  background-color: hsl(0, 0%, 99%);
+}
+
+.submitButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 0 8px 8px 0;
+  background-color: #ff7d03;
+  color: rgb(22, 9, 0);
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}

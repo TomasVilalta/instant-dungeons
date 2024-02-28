@@ -5,7 +5,12 @@ function Header() {
   return (
     <>
       <header className={styles.header}>
-        <img src="./public/instant-dungeons-Logo.png" alt="Instant Dungeons Logo" className={styles.logo} />
+        <div className={styles.left}>
+          <img src="./public/instant-dungeons-Logo.png" alt="Instant Dungeons Logo" className={styles.logo} />
+          <a href="" className={styles.nameTitle}>
+            Instant Dungeons
+          </a>
+        </div>
 
         <nav className={styles.navigation}>
           <ul>

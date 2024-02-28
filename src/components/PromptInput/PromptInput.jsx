@@ -1,21 +1,23 @@
 import React from "react";
 import styles from "./PromptInput.module.css";
 
-function PromptInput() {
+function PromptInput({ handleSubmit, disabled }) {
   const [prompt, setPrompt] = React.useState("");
 
-  const handleSumit = (e) => {
-    e.preventDefault();
-    console.log("submit:", prompt);
-  };
   return (
-    <form onSubmit={handleSumit} className={styles.searchForm}>
+    <form
+      onSubmit={(e) => {
+        handleSubmit(e, prompt);
+      }}
+      className={styles.searchForm}
+    >
       <label htmlFor="promptInput">
         <input
           className={styles.searchInput}
+          disabled={disabled}
           id="promptInput"
-          type="text"
-          placeholder="Enter a location or setting"
+          type="search"
+          placeholder="City, Forest, Dungeon, etc."
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
         />

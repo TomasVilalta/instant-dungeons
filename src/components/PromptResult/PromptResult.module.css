@@ -1,0 +1,7 @@
+.result {
+  margin-top: 48px;
+  background-color: hsl(0, 0%, 95%);
+  border-radius: 16px;
+  padding: 16px;
+  color: black;
+}

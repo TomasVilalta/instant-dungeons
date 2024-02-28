@@ -1,10 +1,17 @@
 import React from "react";
-
 import styles from "./Hero.module.css";
-import DragonMouse from "../DragonMouse/DragonMouse";
 import PromptInput from "../PromptInput/PromptInput";
+import PromptResult from "../PromptResult/PromptResult";
+import useGemini from "../../hooks/useGemini";
 
 function Hero() {
+  const [generateContent, response, isLoading, isError] = useGemini();
+
+  const handlePrompt = async (e, prompt) => {
+    e.preventDefault();
+    const result = await generateContent({ prompt });
+  };
+
   return (
     <>
       <main>
@@ -13,11 +20,15 @@ function Hero() {
             Generate Plot Hooks for Your Tabletop RPG <strong>Instantly</strong>
           </h2>
           <p className={styles.subtitle}>
-            Give a place, location or setting and we'll generate some plot hooks ready to use in your next game. (Or the
-            one you are running <strong>right now</strong> and didn't prepare for. Oops!)
+            Give us a location and we'll generate some plot hooks ready to use in your next game. (Or maybe the one you
+            are running <strong>right now</strong> and that you haven't prepared for. Oops!)
           </p>
 
-          <PromptInput />
+          <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
+          <PromptResult response={response} />
+
+          {isLoading && <p>Loading...</p>}
+          {isError && <p>Something went wrong. Try again later.</p>}
         </section>
       </main>
     </>

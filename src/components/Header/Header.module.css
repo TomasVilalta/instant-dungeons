@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 0px 167px;
+  margin-top: 24px;
+}
+
+.logo {
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  display: block;
+
+  transition: transform 0.3s;
+  position: relative;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.navigation ul a {
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  position: relative;
+}
+
+.navigation ul a::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  background: hsl(0, 0%, 100%);
+  transition: width 0.3s;
+}
+
+.navigation ul a:hover::after {
+  width: 35%;
+}
+
+.logo:hover {
+  transform: scale(1.2) rotate(-8deg);
+}

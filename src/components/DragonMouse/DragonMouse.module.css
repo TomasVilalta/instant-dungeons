@@ -1,0 +1,6 @@
+.dragon {
+  position: absolute;
+  width: 88px;
+  height: 88px;
+  pointer-events: none;
+}

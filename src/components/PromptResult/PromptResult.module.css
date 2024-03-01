@@ -1,7 +1,11 @@
-.result {
+.prompts {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
   margin-top: 48px;
-  background-color: hsl(0, 0%, 95%);
+  gap: 48px;
   border-radius: 16px;
-  padding: 16px;
   color: black;
+  max-width: 1000px;
 }

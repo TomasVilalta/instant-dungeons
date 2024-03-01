@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Hero.module.css";
 import PromptInput from "../PromptInput/PromptInput";
-import PromptResult from "../PromptResult/PromptResult";
+import PromptResults from "../PromptResult/PromptResult";
 import useGemini from "../../hooks/useGemini";
 
 function Hero() {
@@ -9,7 +9,7 @@ function Hero() {
 
   const handlePrompt = async (e, prompt) => {
     e.preventDefault();
-    const result = await generateContent({ prompt });
+    await generateContent({ prompt });
   };
 
   return (
@@ -23,13 +23,12 @@ function Hero() {
             Give us a location and we'll generate some plot hooks ready to use in your next game. (Or maybe the one you
             are running <strong>right now</strong> and that you haven't prepared for. Oops!)
           </p>
-
-          <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
-          <PromptResult response={response} />
-
-          {isLoading && <p>Loading...</p>}
-          {isError && <p>Something went wrong. Try again later.</p>}
         </section>
+        <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
+        <PromptResults plotHooks={response} />
+
+        {isLoading && <p>Loading...</p>}
+        {isError && <p>Something went wrong. Try again later.</p>}
       </main>
     </>
   );

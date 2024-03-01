@@ -17,6 +17,7 @@ function PromptInput({ handleSubmit, disabled }) {
           disabled={disabled}
           id="promptInput"
           type="search"
+          required
           placeholder="City, Forest, Dungeon, etc."
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}

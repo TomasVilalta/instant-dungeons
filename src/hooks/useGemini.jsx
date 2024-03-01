@@ -1,10 +1,11 @@
 import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 import React, { useEffect } from "react";
 import { MODEL_NAME, generationConfig, safetySettings, parts } from "../config/geminiConfig";
+import { splitResponse } from "../helpers/splitResponse";
 
 export default function useGemini() {
   const [model, setModel] = React.useState(null);
-  const [response, setResponse] = React.useState("");
+  const [response, setResponse] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
   const [isError, setIsError] = React.useState(false);
 
@@ -16,18 +17,21 @@ export default function useGemini() {
 
   const generateContent = async ({ prompt }) => {
     setIsLoading(true);
+    setResponse([]);
     setIsError(false);
     const promptSet = [...parts, { text: `input: ${prompt}` }];
+    console.log("promptSet", promptSet);
     try {
       const result = await model.generateContent({
         contents: [{ role: "user", parts: promptSet }],
         generationConfig,
         safetySettings,
       });
-      const response = await result.response;
+      const data = await result.response;
       setIsLoading(false);
-      setResponse(response.text());
-      return response.text();
+      const plotHooks = splitResponse(data.text());
+      setResponse(plotHooks);
+      return plotHooks;
     } catch (err) {
       setIsLoading(false);
       setIsError(true);

@@ -1,4 +1,4 @@
-<div align="center">
+<div align="center" id="readme-top" >
   <a href="https://github.com/TomasVilalta/instant-dungeons">
     <img src="images/Logo.png" alt="Logo" width="400" >
   </a>
@@ -9,7 +9,7 @@
 Have you ever found yourself in need of a quick plot hook for your tabletop role-playing game? Did you spend your week procrastinating on your campaign and now you need to come up with something on the fly? Instant Dungeons is a web application that utilizes AI to generate plot hooks on the go for tabletop role-playing games. 🎲
     <br />
     <br />
-    <a href="https://instant-dungeons.vercel.app/"><strong>Go to Demo Website »</strong></a>
+    <a href="https://instant-dungeons.vercel.app/" target="_blank"><strong>Go to Demo Website »</strong></a>
 </div>
 
 > **Note:** This project is currently under development. Stay tuned for updates and new features! 🚧

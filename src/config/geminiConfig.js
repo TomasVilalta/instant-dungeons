@@ -70,20 +70,4 @@ export const parts = [
   },
   { text: "input: Flower Shop" },
   { text: "output: The owner of the flower shop is found dead in the back room, surrounded by exotic flowers." },
-  { text: "input: Library" },
-  {
-    text: "output: A group of scholars are arguing over a rare book that has been stolen from the library. The players must find the book and return it to the library before it is lost forever.#A young woman approaches the players and asks them to help her find her missing brother. She says that he was last seen in the library, researching a dangerous spell.#The players stumble upon a secret room in the library that contains a collection of forbidden books. If they read any of the books, they will be cursed.",
-  },
-  { text: "input: Mountain" },
-  {
-    text: "output: The players come across a group of travelers who have been attacked by bandits. The travelers ask the players for help in retrieving their stolen belongings.#As the players climb the mountain, they come across a cave entrance. They can hear strange noises coming from inside the cave.#The players reach the top of the mountain and find a beautiful meadow. In the middle of the meadow is a crystal-clear lake.",
-  },
-  { text: "input: Flower Shop" },
-  {
-    text: "output: The owner of the flower shop is found dead in the back room, surrounded by exotic flowers.#A customer comes into the flower shop and asks for a bouquet of flowers that will make his love fall head over heels for him.#A group of children come into the flower shop and ask for help finding a flower that will grant them a wish.",
-  },
-  { text: "input: A town carnival" },
-  {
-    text: "output: A mysterious stranger arrives at the carnival, offering to tell fortunes. The players can choose to have their fortunes told, but they must be prepared for the consequences.#A group of children have gone missing from the carnival. The players must find the children before they come to harm.#The carnival's main attraction, a giant Ferris wheel, suddenly breaks down, leaving people stranded high in the air. The players must find a way to rescue the people before they fall to their deaths.",
-  },
 ];

@@ -1,12 +1,71 @@
-.prompt {
+.hookCard {
   margin-top: 48px;
+  margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
   background-color: hsl(0, 0%, 95%);
   border-radius: 16px;
   text-align: start;
   text-wrap: pretty;
   padding: 24px;
+  gap: 4px;
   color: black;
   animation: slideInBottom 0.5s ease-in-out;
+}
+
+.promptTitle {
+  font-size: 0.9rem;
+
+  font-weight: 400;
+  color: hsl(0, 0%, 20%);
+  margin-bottom: 4px;
+}
+
+.copyButton {
+  align-self: flex-end;
+  padding: 8px;
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  color: hsl(0, 0%, 40%);
+}
+
+.copyButton:hover {
+  color: hsl(0, 0%, 10%);
+}
+
+.copyButton:focus {
+  outline: 1px solid black;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.copyButton::after {
+  content: "Copy to clipboard";
+  display: block;
+  background-color: hsl(0, 0%, 5%);
+  color: hsl(0, 0%, 95%);
+  font-size: 0.75rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  z-index: 1;
+  transition: all 0.1s ease-in-out;
+
+  /* Hide it */
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.copyButton:hover::after {
+  transform: translate(-50%, -150%);
+  opacity: 1;
+  visibility: visible;
 }
 
 @keyframes slideInBottom {

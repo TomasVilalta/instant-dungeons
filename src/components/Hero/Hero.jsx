@@ -23,8 +23,9 @@ function Hero() {
             Give us a location and we'll generate some plot hooks ready to use in your next game. (Or maybe the one you
             are running <strong>right now</strong> and that you haven't prepared for. Oops!)
           </p>
+          <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
         </section>
-        <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
+
         <PromptResults plotHooks={response} />
 
         {isLoading && <p>Loading...</p>}

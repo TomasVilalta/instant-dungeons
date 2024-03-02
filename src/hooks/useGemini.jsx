@@ -29,7 +29,17 @@ export default function useGemini() {
       });
       const data = await result.response;
       setIsLoading(false);
-      const plotHooks = splitResponse(data.text());
+      const plotHooksText = splitResponse(data.text());
+
+      const plotHooks = plotHooksText.map((plotHook) => {
+        return {
+          id: crypto.randomUUID(),
+          prompt: prompt,
+          plotHook: plotHook,
+        };
+      });
+      console.log("plotHooks", { plotHooks });
+
       setResponse(plotHooks);
       return plotHooks;
     } catch (err) {

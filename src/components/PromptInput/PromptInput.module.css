@@ -1,29 +1,31 @@
-.searchForm {
+.promptForm {
   display: flex;
-  justify-content: center;
   align-items: center;
   margin-top: 70px;
   width: 100%;
+  position: relative;
 }
 
-.searchInput {
-  padding: 8px 16px;
+.promptInput {
+  padding: 12px 24px;
   border: none;
   border-radius: 8px 0 0 8px;
-  font-size: 1rem;
-  width: 100%;
-  min-width: 350px;
+  /* font-size: 1rem; */
   background-color: hsl(0, 0%, 99%);
+  flex-grow: 1;
 }
 
 .submitButton {
-  padding: 8px 16px;
+  padding: 12px 24px;
   border: none;
   border-radius: 0 8px 8px 0;
   background-color: #ff7d03;
-  color: rgb(22, 9, 0);
+  color: hsl(0, 0%, 5%);
   font-weight: 500;
-  font-size: 1rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+}
+
+.submitButton:hover {
+  background-color: #ff9e5e;
 }

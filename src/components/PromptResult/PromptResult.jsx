@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import styles from "./PromptResult.module.css";
-import PlotHook from "../PlotHook";
+import PlotHookCard from "../PlotHook";
 
-function PromptResults({ plotHooks }) {
+function PromptResults({
+  plotHooks, // array of { id, prompt, plotHook }
+}) {
   return (
     <>
       <section id="Prompt Results" className={styles.prompts}>
         {plotHooks.length > 0 &&
           plotHooks.map((plotHook) => {
-            const id = crypto.randomUUID();
-            return <PlotHook key={id} plotHook={plotHook} />;
+            return <PlotHookCard key={plotHook.id} prompt={plotHook.prompt} plotHook={plotHook.plotHook} />;
           })}
       </section>
     </>

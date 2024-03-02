@@ -1,14 +1,23 @@
 import React from "react";
 import styles from "./PlotHook.module.css";
 import { Copy } from "lucide-react";
+import { toast } from "sonner";
 
 function PlotHookCard({ prompt, plotHook }) {
-  const key = Math.random();
+  async function writeClipboardText() {
+    try {
+      await navigator.clipboard.writeText(plotHook);
+      toast.success("Copied to clipboard!");
+    } catch (error) {
+      console.error(error.message);
+    }
+  }
+
   return (
-    <article key={key} className={styles.hookCard}>
+    <article className={styles.hookCard}>
       <h3 className={styles.promptTitle}>{prompt.toUpperCase()}</h3>
       {plotHook}
-      <button className={styles.copyButton}>
+      <button onClick={writeClipboardText} className={styles.copyButton}>
         <Copy className={styles.copyIcon} size={16} />
       </button>
     </article>

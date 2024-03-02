@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import styles from "./PromptResult.module.css";
-import PlotHookCard from "../PlotHook";
+import PlotHookCard from "../PlotHookCard";
 
 function PromptResults({
   plotHooks, // array of { id, prompt, plotHook }

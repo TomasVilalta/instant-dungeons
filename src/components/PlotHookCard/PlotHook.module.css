@@ -1,6 +1,5 @@
 .hookCard {
   margin-top: 48px;
-  margin-bottom: 8px;
   display: flex;
   flex-direction: column;
   background-color: hsl(0, 0%, 95%);
@@ -15,9 +14,13 @@
 
 .promptTitle {
   font-size: 0.9rem;
+  max-width: 20ch;
 
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-weight: 400;
-  color: hsl(0, 0%, 20%);
+  color: hsl(0, 0%, 30%);
   margin-bottom: 4px;
 }
 
@@ -28,17 +31,11 @@
   cursor: pointer;
   border: none;
   background-color: transparent;
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 30%);
 }
 
 .copyButton:hover {
   color: hsl(0, 0%, 10%);
-}
-
-.copyButton:focus {
-  outline: 1px solid black;
-  outline-offset: 3px;
-  border-radius: 4px;
 }
 
 .copyButton::after {

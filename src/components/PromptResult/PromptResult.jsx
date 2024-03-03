@@ -7,12 +7,12 @@ function PromptResults({
 }) {
   return (
     <>
-      <section id="Prompt Results" className={styles.prompts}>
+      <div className={styles.cards}>
         {plotHooks.length > 0 &&
           plotHooks.map((plotHook) => {
             return <PlotHookCard key={plotHook.id} prompt={plotHook.prompt} plotHook={plotHook.plotHook} />;
           })}
-      </section>
+      </div>
     </>
   );
 }

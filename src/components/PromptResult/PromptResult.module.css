@@ -1,4 +1,4 @@
-.prompts {
+.cards {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -7,5 +7,4 @@
   gap: 24px;
   border-radius: 16px;
   color: black;
-  max-width: 1000px;
 }

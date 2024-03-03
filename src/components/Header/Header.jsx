@@ -1,16 +1,18 @@
 import React from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/instant-dungeons-Logo.png";
+import Logo from "../Logo/Logo";
 
 function Header() {
   return (
     <>
       <header className={styles.header}>
         <div className={styles.left}>
-          <img src={logo} alt="Instant Dungeons Logo" className={styles.logo} />
+          {/* <img src={logo} alt="Instant Dungeons Logo" className={styles.logo} />
           <a href="" className={styles.nameTitle}>
             Instant Dungeons
-          </a>
+          </a> */}
+          <Logo />
         </div>
 
         <nav className={styles.navigation}>

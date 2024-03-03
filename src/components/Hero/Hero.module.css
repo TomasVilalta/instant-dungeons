@@ -36,3 +36,7 @@ main {
   width: fit-content;
   color: hsl(0, 0%, 100%, 0.9);
 }
+
+.promptResults {
+  min-height: 330px;
+}

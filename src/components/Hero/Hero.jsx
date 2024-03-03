@@ -3,6 +3,7 @@ import styles from "./Hero.module.css";
 import PromptInput from "../PromptInput/PromptInput";
 import PromptResults from "../PromptResult/PromptResult";
 import useGemini from "../../hooks/useGemini";
+import Spinner from "../Spinner/Spinner";
 
 function Hero() {
   const [generateContent, response, isLoading, isError] = useGemini();
@@ -26,10 +27,12 @@ function Hero() {
           <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
         </section>
 
-        <PromptResults plotHooks={response} />
+        <section id="Prompt Results" className={styles.promptResults}>
+          <PromptResults plotHooks={response} />
 
-        {isLoading && <p>Loading...</p>}
-        {isError && <p>Something went wrong. Try again later.</p>}
+          {isLoading && <Spinner />}
+          {isError && <p>Something went wrong. Try again later.</p>}
+        </section>
       </main>
     </>
   );

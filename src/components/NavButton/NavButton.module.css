@@ -1,0 +1,19 @@
+.navButton {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  position: relative;
+  font-size: small;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  transition: all 0.1s ease-in-out;
+}
+
+.navButton:hover {
+  background-color: rgb(70, 8, 46);
+  border-radius: 8px;
+}

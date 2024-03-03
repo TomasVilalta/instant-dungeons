@@ -3,8 +3,8 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  padding: 0px 167px;
-  margin-top: 24px;
+  margin: 24px auto 0;
+  max-width: 1200px;
 }
 
 .left {
@@ -61,6 +61,10 @@
 
 .navigation ul a:hover::after {
   width: 35%;
+}
+
+.nameTitle:hover {
+  transform: scale(1.2) rotate(-8deg);
 }
 
 .logo:hover {

@@ -1,1 +1,5 @@
-
+.content {
+  padding-bottom: 16rem;
+  margin: auto;
+  max-width: 1200px;
+}

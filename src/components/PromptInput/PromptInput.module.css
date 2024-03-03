@@ -26,6 +26,18 @@
   transition: all 0.2s ease-in-out;
 }
 
+.disabled:hover {
+  background-color: hsl(0, 0%, 90%);
+  color: hsl(0, 0%, 30%);
+  cursor: default;
+}
+
 .submitButton:hover {
-  background-color: #ff9e5e;
+  box-shadow: 0 0 8px 0 rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.disabled:hover {
+  box-shadow: none;
+  transform: none;
 }

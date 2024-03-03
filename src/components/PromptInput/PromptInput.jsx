@@ -17,7 +17,7 @@ function PromptInput({ handleSubmit, disabled }) {
           <Sparkles size={24} />
         </i> */}
       <input
-        className={styles.promptInput}
+        className={`${styles.promptInput} disabled`}
         disabled={disabled}
         id="promptInput"
         type="search"
@@ -26,7 +26,7 @@ function PromptInput({ handleSubmit, disabled }) {
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
       />
-      <input className={styles.submitButton} type="submit" value="Generate!" />
+      <input className={`${styles.submitButton} ${styles.disabled}`} type="submit" value="Generate!" />
     </form>
   );
 }

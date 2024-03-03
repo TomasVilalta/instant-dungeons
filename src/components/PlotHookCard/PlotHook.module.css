@@ -8,8 +8,9 @@
   text-wrap: pretty;
   padding: 24px;
   gap: 4px;
+
   color: black;
-  animation: slideInBottom 0.5s ease-in-out;
+  animation: slideInBottom 0.3s ease-in-out;
 }
 
 .promptTitle {
@@ -68,7 +69,7 @@
 @keyframes slideInBottom {
   from {
     opacity: 0;
-    transform: translateY(100%);
+    transform: translateY(-25%);
   }
   to {
     opacity: 1;

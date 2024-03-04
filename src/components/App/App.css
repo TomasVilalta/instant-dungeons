@@ -1,5 +1,8 @@
 .content {
-  padding-bottom: 16rem;
+  padding-bottom: 88px;
   margin: auto;
   max-width: 1200px;
+  padding-inline: 16px;
+  display: flex;
+  flex-direction: column;
 }

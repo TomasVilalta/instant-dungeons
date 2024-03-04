@@ -1,6 +1,6 @@
 .footer {
   background: rgb(56, 3, 36);
-  position: absolute;
+  align-self: flex-end;
   bottom: 0;
   width: 100%;
   padding: 42px 16px 0px 16px;

@@ -9,7 +9,6 @@ export const splitResponse = (response) => {
   // Sometimes the AI will put a hash sign at the end/beginning of the response
   // so we delete any  empty strings from the array
   plotHooks = plotHooks.filter((hook) => hook !== "");
-  console.log({ plotHooks });
 
   return plotHooks;
 };

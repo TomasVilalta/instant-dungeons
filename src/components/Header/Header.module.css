@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   color: white;
-  margin: 24px auto 0;
+  margin: 24px 0;
   max-width: 1200px;
 }
 
@@ -69,4 +69,29 @@
 
 .logo:hover {
   transform: scale(1.2) rotate(-8deg);
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .left {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .nameTitle {
+    font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navigation ul {
+    gap: 24px;
+  }
 }

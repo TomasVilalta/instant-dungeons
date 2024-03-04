@@ -7,7 +7,6 @@
   text-wrap: pretty;
   padding: 24px;
   gap: 4px;
-
   color: black;
   animation: slideInBottom 0.3s ease-in-out;
 }
@@ -15,7 +14,6 @@
 .promptTitle {
   font-size: 0.9rem;
   max-width: 20ch;
-
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;

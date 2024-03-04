@@ -9,7 +9,6 @@ function Hero() {
   const [generateContent, response, isLoading, isError] = useGemini();
 
   const handlePrompt = async (e, prompt) => {
-    e.preventDefault();
     await generateContent({ prompt });
   };
 
@@ -21,8 +20,8 @@ function Hero() {
             Generate Plot Hooks for Your Tabletop RPG <strong>Instantly</strong>
           </h2>
           <p className={styles.subtitle}>
-            Give us a location and we'll generate some plot hooks ready to use in your next game. (Or maybe the one you
-            are running <strong>right now</strong> and that you haven't prepared for. Oops!)
+            Get custom plot hooks ready to use in your next game. (Or maybe the one you are running{" "}
+            <strong>right now</strong> and that you haven't prepared for. Oops!)
           </p>
           <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
         </section>

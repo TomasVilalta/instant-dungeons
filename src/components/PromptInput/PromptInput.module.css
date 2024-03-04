@@ -18,6 +18,9 @@
 .submitButton {
   padding: 12px 24px;
   border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
   border-radius: 0 8px 8px 0;
   background-color: #ff7d03;
   color: hsl(0, 0%, 5%);

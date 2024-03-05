@@ -116,4 +116,21 @@ aside .footerTitle {
   .footerBottom a {
     font-size: 0.6rem;
   }
+
+  .footer {
+    padding: 24px 16px 0px 16px;
+  }
+  .footerNav {
+    width: 100%;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .navItems {
+    flex-direction: column;
+    gap: 16px;
+  }
+  aside {
+    align-items: center;
+  }
 }

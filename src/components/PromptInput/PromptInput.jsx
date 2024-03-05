@@ -28,7 +28,7 @@ function PromptInput({ handleSubmit, disabled }) {
       />
       <button className={buttonStyle} type="submit">
         Generate
-        <Sparkles size={24} strokeWidth={1.5} />
+        <Sparkles className={styles.buttonIcon} />
       </button>
     </form>
   );

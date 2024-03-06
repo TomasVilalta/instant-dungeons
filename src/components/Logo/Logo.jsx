@@ -3,7 +3,7 @@ import styles from "./Logo.module.css";
 import logo from "../../assets/instant-dungeons-Logo.png";
 
 function Logo({ className }) {
-  const logoStyle = `${styles.logoContainer} ${className}`;
+  const logoStyle = `${styles.logoContainer}  ${className}`;
 
   return (
     <article className={logoStyle}>

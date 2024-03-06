@@ -73,3 +73,19 @@
     transform: translateY(0%);
   }
 }
+
+@media (max-width: 480px) {
+  .hookCard {
+    padding: 16px;
+    font-size: 0.8rem;
+  }
+
+  .promptTitle {
+    font-size: 0.7rem;
+  }
+
+  .copyButton:hover::after {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

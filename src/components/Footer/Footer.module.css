@@ -45,6 +45,7 @@ aside .footerTitle {
 .text {
   font-size: 0.8rem;
   max-width: 30ch;
+  text-wrap: pretty;
 }
 
 .footerBottom {
@@ -130,7 +131,18 @@ aside .footerTitle {
     flex-direction: column;
     gap: 16px;
   }
+
+  .navItems > li > a {
+    display: flex;
+    justify-content: center;
+  }
+
   aside {
     align-items: center;
+  }
+
+  .text {
+    max-width: 300px;
+    text-align: center;
   }
 }

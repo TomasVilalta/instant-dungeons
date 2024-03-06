@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./PlotHook.module.css";
+import styles from "./PlotHookCard.module.css";
 import { Copy } from "lucide-react";
 import { toast } from "sonner";
 

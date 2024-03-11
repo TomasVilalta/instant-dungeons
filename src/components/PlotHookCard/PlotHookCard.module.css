@@ -9,6 +9,7 @@
   gap: 4px;
   color: black;
   animation: slideInBottom 0.3s ease-in-out;
+  width: 100%;
 }
 
 .promptTitle {

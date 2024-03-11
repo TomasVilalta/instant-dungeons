@@ -4,9 +4,11 @@ import PromptInput from "../PromptInput/PromptInput";
 import PromptResults from "../PromptResult/PromptResult";
 import useGemini from "../../hooks/useGemini";
 import Spinner from "../Spinner/Spinner";
+import MessageCard from "../MessageCard/MessageCard";
+import { XCircle as Error } from "lucide-react";
 
 function Hero() {
-  const [generateContent, response, isLoading, isError] = useGemini();
+  const [generateContent, response, isLoading, error] = useGemini();
 
   const handlePrompt = async (e, prompt) => {
     await generateContent({ prompt });
@@ -27,10 +29,18 @@ function Hero() {
         </section>
 
         <section id="Prompt Results" className={styles.promptResults}>
-          <PromptResults plotHooks={response} />
+          {!error && <PromptResults plotHooks={response} />}
 
           {isLoading && <Spinner />}
-          {isError && <p>Something went wrong. Try again later.</p>}
+          {error && (
+            <MessageCard
+              className={styles.errorCard}
+              type="error"
+              title={error}
+              message="Please try again or try a different prompt"
+              icon={<Error />}
+            />
+          )}
         </section>
       </main>
     </>

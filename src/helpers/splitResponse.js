@@ -10,5 +10,9 @@ export const splitResponse = (response) => {
   // so we delete any  empty strings from the array
   plotHooks = plotHooks.filter((hook) => hook !== "");
 
+  if (plotHooks.length < 3) {
+    return "error";
+  }
+
   return plotHooks;
 };

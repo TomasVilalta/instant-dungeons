@@ -7,7 +7,7 @@ export default function useGemini() {
   const [model, setModel] = React.useState(null);
   const [response, setResponse] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(false);
-  const [isError, setIsError] = React.useState(false);
+  const [error, setError] = React.useState("");
 
   React.useEffect(() => {
     const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
@@ -18,7 +18,7 @@ export default function useGemini() {
   const generateContent = async ({ prompt }) => {
     setIsLoading(true);
     setResponse([]);
-    setIsError(false);
+    setError("");
     const promptSet = [...parts, { text: `input: ${prompt}` }];
     console.log("promptSet", promptSet);
     try {
@@ -28,8 +28,15 @@ export default function useGemini() {
         safetySettings,
       });
       const data = await result.response;
+      console.log({ data });
       setIsLoading(false);
+
       const plotHooksText = splitResponse(data.text());
+
+      if (plotHooksText === "error") {
+        setError("Bad model response");
+        return "Bad model response";
+      }
 
       const plotHooks = plotHooksText.map((plotHook) => {
         return {
@@ -38,22 +45,14 @@ export default function useGemini() {
           plotHook: plotHook,
         };
       });
-      console.log("plotHooks", { plotHooks });
-
       setResponse(plotHooks);
       return plotHooks;
     } catch (err) {
       setIsLoading(false);
-      setIsError(true);
-      if (err.response.promptFeedback) {
-        return "Prompt was blocked due to safety reasons. Try another prompt.";
-      }
-      if (!err.response.text()) {
-        return "No response was generated. Try again or try another prompt.";
-      }
+      setError("Something went wrong");
       throw new Error("Something went wrong");
     }
   };
 
-  return [generateContent, response, isLoading, isError];
+  return [generateContent, response, isLoading, error];
 }

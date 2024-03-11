@@ -42,6 +42,10 @@ main {
   align-self: center;
 }
 
+.errorCard {
+  margin-top: 48px;
+}
+
 @media (max-width: 720px) {
   main {
     align-items: flex-start;

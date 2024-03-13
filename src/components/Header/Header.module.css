@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
   margin: 24px 0;
   max-width: 1200px;
 }
@@ -12,95 +11,58 @@
   align-items: center;
 }
 
-.nameTitle {
-  font-size: 1.5rem;
-  font-weight: 300;
-  font-family: "Broking";
-  width: min-content;
-  line-height: 90%;
-  padding: 4px 0;
-  background: linear-gradient(0deg, #ff8800, #fffc62);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
-}
-
-.logo {
-  cursor: pointer;
-  display: block;
-
-  transition: transform 0.3s;
-  position: relative;
-}
-
-.navigation ul {
+.right {
   display: flex;
-  gap: 40px;
+  align-items: center;
+}
+
+.navigationList {
+  display: flex;
+  align-items: center;
+  gap: 32px;
   list-style: none;
 }
 
-.navigation ul a {
-  text-decoration: none;
-  color: white;
-  transition: all 0.2s ease-in-out;
-  position: relative;
+/* Hidden for desktop */
+.menuButton.menuButton {
+  padding: 8px;
+  display: none;
 }
 
-.navigation ul a::after {
-  content: "";
-  display: block;
-  position: absolute;
-  width: 0%;
-  height: 2px;
-  background: hsl(0, 0%, 100%);
-  transition: width 0.3s;
-}
-
-.navigation ul a:hover::after {
-  width: 35%;
-}
-
-.nameTitle:hover {
-  transform: scale(1.2) rotate(-8deg);
-}
-
-.logo:hover {
-  transform: scale(1.2) rotate(-8deg);
+.drawerNavigationList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
 }
 
 @media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    gap: 24px;
+  .navigationList {
+    display: none;
   }
 
-  .nameTitle {
-    font-size: 1.2rem;
+  /* This is a problem with css modules not allowing to overwrite 
+the styles from components so you need to do this ugly ugly thing*/
+
+  /* TODO : If the drawer is open and the vp changes to desktop then the 
+  navItems will go white and not be visible in the drawer */
+  .drawerNavigationList .navButton.navButton {
+    color: black;
+    width: 100%;
   }
 
-  .logo {
-    width: 48px;
+  .drawerNavigationList .navButton.navButton:hover {
+    background-color: hsl(19, 100%, 73%);
   }
 
-  .navigation ul {
-    gap: 24px;
+  .menuButton.menuButton {
+    display: initial;
   }
 }
 
 @media (max-width: 480px) {
   .header {
     flex-direction: row;
-  }
-  .navigation ul {
-    gap: 16px;
-  }
-
-  .navigation ul a {
-    font-size: 0.7rem;
-  }
-
-  .logo {
-    width: 24px;
   }
 }

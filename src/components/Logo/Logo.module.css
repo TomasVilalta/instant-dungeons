@@ -25,9 +25,20 @@
   height: 64px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .logoContainer {
     font-size: 1.2rem;
+  }
+
+  .logo {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoContainer {
+    font-size: 1.1rem;
   }
 
   .nameTitle {

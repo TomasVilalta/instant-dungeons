@@ -25,6 +25,7 @@
 
 .copyButton {
   align-self: flex-end;
+  margin-top: auto;
   padding: 8px;
   position: relative;
   cursor: pointer;

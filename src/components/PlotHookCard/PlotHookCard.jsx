@@ -16,7 +16,7 @@ function PlotHookCard({ prompt, plotHook }) {
   return (
     <article className={styles.hookCard}>
       <h3 className={styles.promptTitle}>{prompt.toUpperCase()}</h3>
-      {plotHook}
+      <p>{plotHook}</p>
       <button onClick={writeClipboardText} className={styles.copyButton}>
         <Copy className={styles.copyIcon} size={18} />
       </button>

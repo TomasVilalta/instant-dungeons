@@ -1,13 +1,13 @@
 import React from "react";
 import styles from "./NavButton.module.css";
-import { Github } from "lucide-react";
 
-function NavButton({ href, children, className, icon, ...rest }) {
+function NavButton({ href, children, className = "", icon, ...rest }) {
   const Tag = href ? "a" : "button";
   const buttonStyle = `${styles.navButton} ${className}`;
+  console.log(buttonStyle);
 
   return (
-    <Tag className={buttonStyle} href={href} {...rest}>
+    <Tag {...rest} className={buttonStyle} href={href}>
       {icon}
       {children}
     </Tag>

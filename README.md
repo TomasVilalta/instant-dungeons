@@ -19,7 +19,7 @@ Have you ever found yourself in need of a quick plot hook for your tabletop role
 ## Roadmap
 
 - [x] AI-powered plot hook generation 🧙‍♂️📚
-- [ ] Mobile responsiveness 📱
+- [x] Mobile responsiveness 📱
 - [ ] Random plot hook generator: Because sometimes you don't even care anymore 🤷‍♂️🎲
 - [ ] Customizable options: Tailor the generated plot hooks to fit your campaign's setting, genre, and themes.🌍🔮
 - [ ] Expand the plot hook: Generate additional details and ideas for a given plot hook. 📝

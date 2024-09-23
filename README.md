@@ -14,6 +14,7 @@ Have you ever found yourself in need of a quick plot hook for your tabletop role
 
 > **Note:** This project is currently under development. Stay tuned for updates and new features! 🚧
 
+
 ![Screenshot](/images/screenshot.png)
 
 ## Roadmap
@@ -23,7 +24,7 @@ Have you ever found yourself in need of a quick plot hook for your tabletop role
 - [ ] Random plot hook generator: Because sometimes you don't even care anymore 🤷‍♂️🎲
 - [ ] Customizable options: Tailor the generated plot hooks to fit your campaign's setting, genre, and themes.🌍🔮
 - [ ] Expand the plot hook: Generate additional details and ideas for a given plot hook. 📝
-- [ ] Save generated plot hooks. 💾📋
+- [x] Save generated plot hooks. 💾📋
 - [ ] Shareable links: Share generated plot hooks with your friends and fellow players. 📤🔗
 
 > **Note 2:** At the time of writing, Google's Gemini AI is the primary model used for plot hook generation, meaning that we are limited to 60 requests per minute. If you encounter any issues with the plot hook generation, please try again in a few minutes. A solution to this limitation may eventually come. 🤖

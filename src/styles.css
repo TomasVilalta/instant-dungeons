@@ -12,7 +12,11 @@ body {
 }
 
 html {
-  background: linear-gradient(to bottom, rgb(20, 20, 20), rgb(32, 2, 21));
+  background: radial-gradient(
+    circle closest-corner at 50% 0%,
+    rgb(46, 5, 5) 0%,
+    #0b0a0aff 100%
+  );
   background-repeat: no-repeat;
   background-size: cover;
 }

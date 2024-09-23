@@ -5,22 +5,35 @@
   border-radius: 16px;
   text-align: start;
   text-wrap: pretty;
-  padding: 24px;
-  gap: 4px;
+  padding: 16px;
+  gap: 2px;
   color: black;
-  animation: slideInBottom 0.3s ease-in-out;
+  animation: slideInBottom 0.5s ease-in-out;
+  animation-fill-mode: forwards;
+  opacity: 0;
   width: 100%;
+  transition: scale 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.hookCard:hover {
+  scale: 1.05;
+  transition: scale 0.2s ease-in-out;
 }
 
 .promptTitle {
   font-size: 0.9rem;
-  max-width: 20ch;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* max-width: 20ch;
+  white-space: nowrap; */
+  /* overflow: hidden;
+  text-overflow: ellipsis; */
   font-weight: 400;
   color: hsl(0, 0%, 30%);
   margin-bottom: 4px;
+}
+
+.hookCard p {
+  font-size: 1rem;
 }
 
 .copyButton {
@@ -65,14 +78,27 @@
   visibility: visible;
 }
 
+.copyIcon {
+  animation: popIn 0.1s ease-in-out;
+}
+
 @keyframes slideInBottom {
   from {
     opacity: 0;
-    transform: translateY(-25%);
+    transform: translateY(-10%);
   }
   to {
     opacity: 1;
     transform: translateY(0%);
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1);
   }
 }
 

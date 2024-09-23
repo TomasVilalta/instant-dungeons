@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Hero.module.css";
 import PromptInput from "../PromptInput/PromptInput";
 import PromptResults from "../PromptResult/PromptResult";
@@ -8,7 +7,7 @@ import MessageCard from "../MessageCard/MessageCard";
 import { XCircle as Error } from "lucide-react";
 
 function Hero() {
-  const [generateContent, response, isLoading, error] = useGemini();
+  const [generateContent, plotHooks, isLoading, error] = useGemini();
 
   const handlePrompt = async (e, prompt) => {
     await generateContent({ prompt });
@@ -17,21 +16,22 @@ function Hero() {
   return (
     <>
       <main>
-        <section id="home" className={styles.hero}>
+        <div id="home" className={styles.hero}>
           <h2 className={styles.title}>
-            Generate Plot Hooks for Your Tabletop RPG <strong>Instantly</strong>
+            Just-add-water plot hooks for your TTRPGs
           </h2>
           <p className={styles.subtitle}>
-            Get custom plot hooks ready to use in your next game. (Or maybe the one you are running{" "}
-            <strong>right now</strong> and that you haven't prepared for. Oops!)
+            Just type in a location, character, or event and we'll get you some
+            adventure ideas.
+            <br /> Hell, your players may never notice you were not prepared.
           </p>
           <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
-        </section>
+        </div>
 
         <section id="Prompt Results" className={styles.promptResults}>
-          {!error && <PromptResults plotHooks={response} />}
+          {isLoading && <Spinner style={{ marginTop: "64px" }} />}
+          {!error && <PromptResults plotHooks={plotHooks} />}
 
-          {isLoading && <Spinner />}
           {error && (
             <MessageCard
               className={styles.errorCard}

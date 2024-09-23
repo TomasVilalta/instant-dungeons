@@ -9,14 +9,14 @@ main {
 }
 
 .hero {
-  max-width: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 16px;
-  text-wrap: balance;
-  max-width: 25ch;
   line-height: 130%;
   font-family: "Poppins", sans-serif;
 }
@@ -30,10 +30,9 @@ main {
 
 .subtitle {
   font-size: 1.2rem;
-  text-wrap: pretty;
-  margin-bottom: 16px;
+  text-wrap: balance;
+  text-align: center;
   font-weight: 300;
-  width: fit-content;
   color: hsl(0, 0%, 100%, 0.9);
 }
 

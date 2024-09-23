@@ -1,7 +1,7 @@
 .logoContainer {
   display: flex;
   align-items: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .nameTitle {
@@ -23,6 +23,11 @@
   transition: transform 0.3s;
   width: 64px;
   height: 64px;
+  transition: all 0.3s ease-in-out;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 3px #fff);
+  transform: scale(1.1) rotate(-5deg);
 }
 
 @media (max-width: 768px) {

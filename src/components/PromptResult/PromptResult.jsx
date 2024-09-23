@@ -9,8 +9,15 @@ function PromptResults({
     <>
       <div className={styles.cards}>
         {plotHooks.length > 0 &&
-          plotHooks.map((plotHook) => {
-            return <PlotHookCard key={plotHook.id} prompt={plotHook.prompt} plotHook={plotHook.plotHook} />;
+          plotHooks.map((plotHook, index) => {
+            return (
+              <PlotHookCard
+                key={plotHook.id}
+                prompt={plotHook.prompt}
+                plotHook={plotHook.plotHook}
+                animationDelayMs={index * 50}
+              />
+            );
           })}
       </div>
     </>

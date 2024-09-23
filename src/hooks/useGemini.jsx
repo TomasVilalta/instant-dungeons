@@ -1,11 +1,23 @@
-import { GoogleGenerativeAI, HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
+import {
+  GoogleGenerativeAI,
+  HarmBlockThreshold,
+  HarmCategory,
+} from "@google/generative-ai";
 import React, { useEffect } from "react";
-import { MODEL_NAME, generationConfig, safetySettings, parts } from "../config/geminiConfig";
+import {
+  MODEL_NAME,
+  generationConfig,
+  safetySettings,
+  parts,
+} from "../config/geminiConfig";
 import { splitResponse } from "../helpers/splitResponse";
 
 export default function useGemini() {
   const [model, setModel] = React.useState(null);
-  const [response, setResponse] = React.useState([]);
+  const [plotHooks, setPlotHooks] = React.useState(() => {
+    const plotHooks = window.localStorage.getItem("plotHooks");
+    return plotHooks ? JSON.parse(plotHooks) : [];
+  });
   const [isLoading, setIsLoading] = React.useState(false);
   const [error, setError] = React.useState("");
 
@@ -17,7 +29,6 @@ export default function useGemini() {
 
   const generateContent = async ({ prompt }) => {
     setIsLoading(true);
-    setResponse([]);
     setError("");
     const promptSet = [...parts, { text: `input: ${prompt}` }];
     console.log("promptSet", promptSet);
@@ -38,14 +49,17 @@ export default function useGemini() {
         return "Bad model response";
       }
 
-      const plotHooks = plotHooksText.map((plotHook) => {
+      const newPlotHooks = plotHooksText.map((plotHook) => {
         return {
           id: crypto.randomUUID(),
           prompt: prompt,
           plotHook: plotHook,
         };
       });
-      setResponse(plotHooks);
+      const allPlotHooks = [...newPlotHooks, ...plotHooks];
+      setPlotHooks(allPlotHooks);
+      window.localStorage.setItem("plotHooks", JSON.stringify(allPlotHooks));
+
       return plotHooks;
     } catch (err) {
       setIsLoading(false);
@@ -54,5 +68,5 @@ export default function useGemini() {
     }
   };
 
-  return [generateContent, response, isLoading, error];
+  return [generateContent, plotHooks, isLoading, error];
 }

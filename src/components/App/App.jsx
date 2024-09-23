@@ -4,16 +4,19 @@ import Header from "../Header";
 import Hero from "../Hero";
 import { Toaster } from "sonner";
 import Footer from "../Footer/Footer";
+import Drawer from "../Drawer";
 
 function App() {
   return (
     <>
       <Toaster duration={3000} />
-      <div className="content">
+      <div className="content-wrapper">
         <Header />
-        <Hero />
+        <div className="content">
+          <Hero />
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 }

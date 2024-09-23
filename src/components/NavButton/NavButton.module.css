@@ -3,7 +3,7 @@
   border: none;
   cursor: pointer;
   background-color: transparent;
-  color: white;
+  color: rgb(255, 255, 255);
   position: relative;
   display: flex;
   align-items: center;

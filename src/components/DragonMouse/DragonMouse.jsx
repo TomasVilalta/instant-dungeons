@@ -2,7 +2,10 @@ import React from "react";
 import styles from "./DragonMouse.module.css";
 
 function DragonMouse() {
-  const [mousePosition, setMousePosition] = React.useState({ x: null, y: null });
+  const [mousePosition, setMousePosition] = React.useState({
+    x: null,
+    y: null,
+  });
   const imgRef = React.useRef();
 
   React.useEffect(() => {
@@ -26,11 +29,19 @@ function DragonMouse() {
   }, [mousePosition]);
 
   return (
-    <div>
-      <div>
+    <div
+      style={{
+        position: "absolute",
+        inset: 0,
+        pointerEvents: "none",
+        zIndex: "10000",
+      }}
+    >
+      <div className={styles.wrap} ref={imgRef}>
         {mousePosition.x}/ {mousePosition.y}
+        <img className={styles.dragon} src="/public/dragon.svg" />
+        <span className={styles.fire} />
       </div>
-      <img className={styles.dragon} ref={imgRef} src="/public/dragon.svg" />
     </div>
   );
 }

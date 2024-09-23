@@ -1,3 +1,11 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+/* 
 .loader {
   width: 48px;
   height: 48px;
@@ -15,5 +23,32 @@
   }
   100% {
     transform: rotate(360deg);
+  }
+} */
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 42px;
+  aspect-ratio: 1;
+  border-radius: 0%;
+  background: #f03355;
+  clip-path: polygon(50% 0, 96% 25%, 96% 75%, 50% 100%, 4% 75%, 4% 20%);
+  /* clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+  animation: l1 2s infinite cubic-bezier(0.3, 1, 0, 1);
+}
+@keyframes l1 {
+  25% {
+    border-radius: 0;
+    background: #514b82;
+    clip-path: polygon(50% 0, 100% 50%, 100% 50%, 50% 100%, 0% 50%, 0% 50%);
+  }
+  50% {
+    border-radius: 0;
+    background: #923fff;
+    clip-path: polygon(49% 0, 100% 0, 100% 100%, 54% 100%, 0 100%, 0 0);
+  }
+  75% {
+    border-radius: 0;
+    background: #ffa516;
+    clip-path: polygon(50% 0, 50% 0, 100% 100%, 50% 100%, 0% 100%, 50% 0);
   }
 }

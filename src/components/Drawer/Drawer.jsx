@@ -22,17 +22,15 @@ function Drawer({ handleDismiss, children }) {
 
   return (
     <FocusLock returnFocus={true}>
-      <RemoveScroll>
-        <div className={styles.wrapper}>
-          <div className={styles.backdrop} onClick={handleDismiss} />
-          <div className={styles.drawer}>
-            <div>{children}</div>
-            <button className={styles.closeBtn} onClick={handleDismiss}>
-              <Close size={18} /> Dismiss
-            </button>
-          </div>
+      <div className={styles.wrapper}>
+        {/* <div className={styles.backdrop} onClick={handleDismiss} /> */}
+        <div className={styles.drawer}>
+          <div>{children}</div>
+          <button className={styles.closeBtn} onClick={handleDismiss}>
+            <Close size={18} /> Dismiss
+          </button>
         </div>
-      </RemoveScroll>
+      </div>
     </FocusLock>
   );
 }

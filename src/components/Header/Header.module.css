@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 24px 0;
-  max-width: 1200px;
+  margin: 12px 24px;
 }
 
 .left {
@@ -13,7 +12,9 @@
 
 .right {
   display: flex;
-  align-items: center;
+  flex-direction: row-reverse;
+  align-items: end;
+  gap: 32px;
 }
 
 .navigationList {
@@ -26,7 +27,6 @@
 /* Hidden for desktop */
 .menuButton.menuButton {
   padding: 8px;
-  display: none;
 }
 
 .drawerNavigationList {

@@ -14,7 +14,7 @@ function PlotHookCard({ prompt, plotHook, animationDelayMs }) {
         setCopied(false);
       }, 3000);
     } catch (error) {
-      console.error(error.message);
+      toast.error("Failed to copy to clipboard");
     }
   }
   // make prompt lowercase and first letter uppercase

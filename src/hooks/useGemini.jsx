@@ -1,18 +1,11 @@
-import {
-  GoogleGenerativeAI,
-  HarmBlockThreshold,
-  HarmCategory,
-} from "@google/generative-ai";
-import React, { useEffect } from "react";
-import {
-  MODEL_NAME,
-  generationConfig,
-  safetySettings,
-  parts,
-} from "../config/geminiConfig";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+import React from "react";
+import { MODEL_NAME, safetySettings, parts } from "../config/geminiConfig";
 import { splitResponse } from "../helpers/splitResponse";
+import { useGeminiConfig } from "../context/GeminiConfigContext";
 
 export default function useGemini() {
+  const { generationConfig } = useGeminiConfig();
   const [model, setModel] = React.useState(null);
   const [plotHooks, setPlotHooks] = React.useState(() => {
     const plotHooks = window.localStorage.getItem("plotHooks");
@@ -31,7 +24,6 @@ export default function useGemini() {
     setIsLoading(true);
     setError("");
     const promptSet = [...parts, { text: `input: ${prompt}` }];
-    console.log("promptSet", promptSet);
     try {
       const result = await model.generateContent({
         contents: [{ role: "user", parts: promptSet }],
@@ -39,7 +31,6 @@ export default function useGemini() {
         safetySettings,
       });
       const data = await result.response;
-      console.log({ data });
       setIsLoading(false);
 
       const plotHooksText = splitResponse(data.text());

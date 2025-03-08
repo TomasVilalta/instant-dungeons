@@ -18,29 +18,28 @@ function Hero() {
       <main>
         <div id="home" className={styles.hero}>
           <h2 className={styles.title}>
-            Just-add-water plot hooks for your TTRPGs
+            Just-add-water <strong>plot hooks</strong> for your TTRPGs
           </h2>
           <p className={styles.subtitle}>
-            Just type in a location, character, or event and we'll get you some
-            adventure ideas.
-            <br /> Hell, your players may never notice you were not prepared.
+            No prep? No problem. Drop in a location, and we&apos;ll whip up
+            fresh adventure hooks in seconds—so you can run a great game on the
+            fly.
           </p>
           <PromptInput handleSubmit={handlePrompt} disabled={isLoading} />
         </div>
 
         <section id="Prompt Results" className={styles.promptResults}>
           {isLoading && <Spinner style={{ marginTop: "64px" }} />}
-          {!error && <PromptResults plotHooks={plotHooks} />}
-
           {error && (
             <MessageCard
               className={styles.errorCard}
               type="error"
-              title={error}
-              message="Please try again or try a different prompt"
+              title={"Sorry!"}
+              message="We couldn't generate a response for that prompt. Plase try again or try a different prompt."
               icon={<Error />}
             />
           )}
+          <PromptResults plotHooks={plotHooks} />
         </section>
       </main>
     </>

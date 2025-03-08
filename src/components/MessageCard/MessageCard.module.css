@@ -1,5 +1,6 @@
 .card {
   width: 100%;
+  max-width: 500px;
   padding: 16px;
   display: flex;
   align-items: center;
@@ -9,7 +10,7 @@
 }
 
 .error {
-  background-color: hsla(0, 100%, 50%, 0.397);
+  background-color: hsla(0, 100%, 86%, 0.212);
 }
 .warning {
   background-color: hsla(50, 100%, 50%, 0.397);
@@ -29,10 +30,11 @@
 }
 
 .content h3 {
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
 .content p {
   color: hsl(0, 100%, 95%);
+  font-size: 0.9rem;
 }

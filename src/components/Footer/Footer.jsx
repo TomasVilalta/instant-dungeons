@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Footer.module.css";
 
 function Footer() {
@@ -6,7 +5,7 @@ function Footer() {
     <footer className={styles.footer}>
       Enjoying Instant Dungeons? Star it on{" "}
       <a
-        href="https://github.com/TomasVilalta"
+        href="https://github.com/TomasVilalta/instant-dungeons"
         target="_Blank"
         rel="noopener noreferrer"
       >

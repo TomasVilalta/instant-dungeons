@@ -1,6 +1,6 @@
 import { HarmBlockThreshold, HarmCategory } from "@google/generative-ai";
 
-export const MODEL_NAME = "gemini-1.0-pro";
+export const MODEL_NAME = "gemini-2.0-flash";
 
 export const generationConfig = {
   temperature: 0.9,
@@ -69,5 +69,7 @@ export const parts = [
     text: "output: The players come across a group of animals gathered around a clearing, seemingly transfixed by something in the center.",
   },
   { text: "input: Flower Shop" },
-  { text: "output: The owner of the flower shop is found dead in the back room, surrounded by exotic flowers." },
+  {
+    text: "output: The owner of the flower shop is found dead in the back room, surrounded by exotic flowers.",
+  },
 ];

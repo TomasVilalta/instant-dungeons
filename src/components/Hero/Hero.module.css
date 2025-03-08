@@ -12,6 +12,19 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 20px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .title {
@@ -43,6 +56,7 @@ main {
 
 .errorCard {
   margin-top: 48px;
+  margin-inline: auto;
 }
 
 @media (max-width: 720px) {
